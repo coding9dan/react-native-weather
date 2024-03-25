@@ -28,7 +28,7 @@ const icons = {
 export default function App() {
   const [city, setCity] = useState("Loading...");
   const [days, setDays] = useState([]);
-  const [ok, setOk] = useState(true);
+  const [, setOk] = useState(true);
   const getWeather = async () => {
     const { granted } = await Location.requestForegroundPermissionsAsync();
 
@@ -101,7 +101,6 @@ export default function App() {
                   color="white"
                 />
               </View>
-
               <Text style={styles.description}>{day.weather[0].main}</Text>
               <Text style={styles.tinyText}>{day.weather[0].description}</Text>
               <Text style={styles.tinyDateText}>{day.dt_txt}</Text>
@@ -128,7 +127,6 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     color: "white",
   },
-  weather: {},
   day: {
     width: SCREEN_WIDTH,
     alignItems: "flex-start",
